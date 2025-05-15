@@ -11,7 +11,7 @@ function ThemeProvider({ children } : { children: ReactNode }) {
 
     const [theme, setTheme] = useState("dark");
     const switchTheme = () => {
-        theme == "dark" ? setTheme("light") : setTheme("dark");
+        setTheme(theme == "dark" ? "light" : "dark");
     }
 
     return (

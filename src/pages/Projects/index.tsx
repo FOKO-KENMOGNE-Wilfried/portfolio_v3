@@ -1,6 +1,11 @@
+import { useTheme } from "../../utils/Context/ThemeContext";
+
 function Projects(){
+
+    const { theme } = useTheme();
+
     return (
-        <div className="">Projects</div>
+        <div className={`${theme == "dark" ? "" : ""}`}>Projects</div>
     )
 }
 

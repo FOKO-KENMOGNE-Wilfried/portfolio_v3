@@ -1,6 +1,11 @@
+import { useTheme } from "../../utils/Context/ThemeContext";
+
 function AboutMe(){
+
+    const { theme } = useTheme();
+
     return (
-        <div className="">AboutMe</div>
+        <div className={`${theme == "dark" ? "" : ""}`}>AboutMe</div>
     )
 }
 
