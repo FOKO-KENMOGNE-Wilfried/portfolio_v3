@@ -5,7 +5,7 @@ function Projects(){
     const { theme } = useTheme();
 
     return (
-        <div className={`${theme == "dark" ? "" : ""}`}>Projects</div>
+        <div className={`${theme == "dark" ? "" : ""} p-16`}>Projects</div>
     )
 }
 

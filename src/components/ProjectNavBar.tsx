@@ -1,6 +1,6 @@
 function ProjectNavBar(){
     return (
-        <div>Project Navbar</div>
+        <div className="w-80 border-r border-secondary-dark"></div>
     )
 }
 
