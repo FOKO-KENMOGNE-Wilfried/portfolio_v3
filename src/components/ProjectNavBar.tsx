@@ -1,7 +1,7 @@
-function ContactNavBar(){
+function ProjectNavBar(){
     return (
-        <div>Default Layout</div>
+        <div>Project Navbar</div>
     )
 }
 
-export default ContactNavBar;
+export default ProjectNavBar;

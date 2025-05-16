@@ -9,9 +9,12 @@ import FolderIcon from "./common/icons/FolderIcon";
 import FileIcon from "./common/icons/FileIcon";
 import MailIcon from "./common/icons/MailIcon";
 import PhoneIcon from "./common/icons/PhoneIcon";
+import characterReduce from "../utils/functions/CharacterReduce";
+import { useInformation } from "../utils/Context/InofrmationContext";
 
 function AboutNavBar() {
   const { theme } = useTheme();
+  const { updateInformation, information } = useInformation();
 
   type File = {
     id: number;
@@ -163,7 +166,11 @@ function AboutNavBar() {
                   id: 2111,
                   name: "About me",
                   isActive: false,
-                  data: "...",
+                  data: `
+                    /**
+                     * The simple message to say you something about me...
+                    */
+                  `,
                 },
               ],
             },
@@ -390,24 +397,34 @@ function AboutNavBar() {
                                 <div
                                   key={file.id}
                                   onClick={() =>
-                                    setInformationList(
-                                      toggleFileIsActive(
-                                        informationList,
-                                        currentObject.id,
-                                        content.id,
-                                        info.id,
-                                        file.id
+                                    {
+                                      setInformationList(
+                                        toggleFileIsActive(
+                                          informationList,
+                                          currentObject.id,
+                                          content.id,
+                                          info.id,
+                                          file.id
+                                        )
+                                      );
+                                      updateInformation(
+                                        {
+                                          id: file.id,
+                                          name: file.name,
+                                          content: file.data,
+                                          isActive: true,
+                                        }
                                       )
-                                    )
+                                    }
                                   }
                                   className={`${
-                                    file.isActive
+                                    information.filter(element => element.id == file.id)[0]?.isActive
                                       ? "text-primary-light"
                                       : "text-secondary-dark"
                                   } flex items-center gap-2 cursor-pointer`}
                                 >
                                   <FileIcon className="w-4 h-4" />
-                                  <p>{file.name}</p>
+                                  <p>{characterReduce(file.name, 10)}</p>
                                 </div>
                               ))}
                             </div>
