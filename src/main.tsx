@@ -13,31 +13,34 @@ import ContactMeLayout from './components/layouts/ContactMeLayout'
 import ContactMe from './pages/ContactMe'
 import ThemeProvider from './utils/Context/ThemeContext'
 import InformationProvider from './utils/Context/InofrmationContext'
+import ProjectProvider from './utils/Context/ProjectContext'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Router>
       <ThemeProvider>
         <InformationProvider>
-          <Routes>
-            <Route path='/' element={<DefaultLayout />}>
-              <Route path='/' element={<Home />}></Route>
-            </Route>
+          <ProjectProvider>
+            <Routes>
+              <Route path='/' element={<DefaultLayout />}>
+                <Route path='/' element={<Home />}></Route>
+              </Route>
 
-            <Route element={<AboutMeLayout />}>
-              <Route path='/about-me' element={<AboutMe />}></Route>
-            </Route>
+              <Route element={<AboutMeLayout />}>
+                <Route path='/about-me' element={<AboutMe />}></Route>
+              </Route>
 
-            <Route element={<ProjectLayout />}>
-              <Route path='/my-project' element={<Projects />}></Route>
-            </Route>
+              <Route element={<ProjectLayout />}>
+                <Route path='/my-project' element={<Projects />}></Route>
+              </Route>
 
-            <Route element={<ContactMeLayout />}>
-              <Route path='/contact-me' element={<ContactMe />}></Route>
-            </Route>
+              <Route element={<ContactMeLayout />}>
+                <Route path='/contact-me' element={<ContactMe />}></Route>
+              </Route>
 
-            <Route path='*' element={<NotFound />} />
-          </Routes>
+              <Route path='*' element={<NotFound />} />
+            </Routes>
+          </ProjectProvider>
         </InformationProvider>
       </ThemeProvider>
     </Router>

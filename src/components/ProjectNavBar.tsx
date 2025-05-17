@@ -1,17 +1,20 @@
-import type { JSX } from "react";
+import { useEffect, useState, type JSX } from "react";
 import ArrowDownIcon from "./common/icons/ArrowDownIcon";
 import ReactjsIcon from "./common/icons/ReactjsIcon";
 import VuejsIcon from "./common/icons/VuejsIcon";
 import SelectTechno from "./common/SelectTechno";
+import { useProject } from "../utils/Context/ProjectContext";
 
 function ProjectNavBar(){
 
-    const navLinks: {
+    const { updateProjectList, filterList } = useProject()
+
+    const [navLinks, setNavLinks] = useState<{
         id: number,
         name: string,
         icon: JSX.Element,
         isChecked: boolean
-    }[] = [
+    }[]>([
         {
             id: 1,
             name: "React",
@@ -24,9 +27,35 @@ function ProjectNavBar(){
             icon: <VuejsIcon className="w-6 h-6" />,
             isChecked: false
         },
-    ]
+    ])
 
-    const searchList: string[] = []
+    function updateSearchList(value: string) {
+        setNavLinks(navLinks.map((element) => {
+            if(element.name == value && !element.isChecked) {
+                element.isChecked = true;
+            } else if(element.name == value && element.isChecked) {
+                element.isChecked = false;
+            }
+            return element;
+        }))
+        if(navLinks.filter((element => element.isChecked)).map((element => element.name)).length == 0) {
+            updateProjectList(["All"])
+        } else {
+            updateProjectList(navLinks.filter((element => element.isChecked)).map((element => element.name)))
+        }
+    }
+
+    useEffect(() => {
+        console.log(filterList)
+        if(filterList.includes("All")) {
+            setNavLinks(
+                navLinks.map((element) => {
+                    element.isChecked = false;
+                    return element;
+                })
+            )
+        }
+    }, [filterList])
 
     return (
         <div className="w-80 border-r border-secondary-dark">
@@ -37,7 +66,7 @@ function ProjectNavBar(){
             <div className="py-4 flex flex-col gap-4">
                 {
                     navLinks.map((link) => (
-                        <SelectTechno id={link.id} label={link.name} isChecked={link.isChecked} icon={link.icon} handleClick={() => null} />
+                        <SelectTechno key={link.id} label={link.name} isChecked={link.isChecked} icon={link.icon} handleClick={() => updateSearchList(link.name)} />
                     ))
                 }
             </div>

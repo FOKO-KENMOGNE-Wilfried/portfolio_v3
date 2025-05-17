@@ -8,7 +8,7 @@ function DefaultLayout(){
     const { theme } = useTheme();
 
     return (
-        <div className={`h-screen flex flex-col justify-between overflow-hidden ${theme == "dark" ? "bg-primary-dark text-primary-light" : "bg-primary-light text-primary-dark"}`}>
+        <div className={`h-screen flex flex-col justify-between  ${theme == "dark" ? "bg-primary-dark text-primary-light" : "bg-primary-light text-primary-dark"}`}>
             <Header />
             <Outlet />
             <Footer />

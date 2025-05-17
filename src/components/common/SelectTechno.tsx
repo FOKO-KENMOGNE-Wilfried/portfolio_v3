@@ -1,9 +1,9 @@
 import type { JSX } from "react";
 import CheckIcon from "./icons/CheckIcon";
 
-function SelectTechno({ id, label, icon, isChecked, handleClick } : { id: number, label: string, icon: JSX.Element, isChecked: boolean, handleClick: (label: string) => void }) {
+function SelectTechno({ label, icon, isChecked, handleClick } : { label: string, icon: JSX.Element, isChecked: boolean, handleClick: (label: string) => void }) {
     return (
-        <div onClick={() => handleClick(label)} className="flex items-center gap-8 pl-8">
+        <div onClick={() => handleClick(label)} className="flex cursor-pointer items-center gap-8 pl-8">
             <div className={`${isChecked ? "bg-secondary-dark text-primary-light" : "text-transparent"} border w-6 h-6 flex justify-center items-center border-secondary-dark rounded-sm transition-all duration-150 ease-in-out`}>
                 <CheckIcon className="w-4 h-4" />
             </div>
