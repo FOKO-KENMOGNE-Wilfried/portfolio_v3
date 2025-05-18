@@ -1,19 +1,8 @@
-import type { JSX } from "react"
 import GithubIcon from "./icons/GithubIcon"
 import characterReduce from "../../utils/functions/CharacterReduce"
+import type { ProjectTypes } from "../../utils/Types/ProjectTypes"
 
-function ProjectCard( { projectData } : { projectData: {
-    id: number,
-    projectName: string,
-    projectDescription: string,
-    projectShortDescription?: string,
-    projectImage: string,
-    projectLink: string,
-    projectGithubLink: string,
-    projectTechoColor: string[],
-    projectStack: string[],
-    projectTechnoIconList: JSX.Element[]
-} } ){
+function ProjectCard( { projectData } : { projectData: ProjectTypes } ){
     return (
         <div className="flex flex-col gap-4 w-fit h-fit">
             <div className="h-full">

@@ -1,20 +1,16 @@
-import { useEffect, useState, type JSX } from "react";
+import { useEffect, useState } from "react";
 import ArrowDownIcon from "./common/icons/ArrowDownIcon";
 import ReactjsIcon from "./common/icons/ReactjsIcon";
 import VuejsIcon from "./common/icons/VuejsIcon";
 import SelectTechno from "./common/SelectTechno";
 import { useProject } from "../utils/Context/ProjectContext";
+import type { ProjectNavLink } from "../utils/Types/ProjectTypes";
 
 function ProjectNavBar(){
 
     const { updateProjectList, filterList } = useProject()
 
-    const [navLinks, setNavLinks] = useState<{
-        id: number,
-        name: string,
-        icon: JSX.Element,
-        isChecked: boolean
-    }[]>([
+    const [navLinks, setNavLinks] = useState<ProjectNavLink[]>([
         {
             id: 1,
             name: "React",

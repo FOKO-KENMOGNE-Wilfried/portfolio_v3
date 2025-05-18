@@ -1,19 +1,8 @@
-import type { JSX } from "react";
 import ReactjsIcon from "../components/common/icons/ReactjsIcon";
 import TailwindCssIcon from "../components/common/icons/TailwindCssIcon";
+import type { ProjectTypes } from "../utils/Types/ProjectTypes";
 
-const ProjectData: {
-    id: number,
-    projectName: string,
-    projectDescription: string,
-    projectShortDescription?: string,
-    projectImage: string,
-    projectLink: string,
-    projectGithubLink: string,
-    projectTechoColor: string[],
-    projectStack: string[],
-    projectTechnoIconList: JSX.Element[]
-}[] = [
+const ProjectData: ProjectTypes[] = [
   {
     id: 0,
     projectName: "Project_1",

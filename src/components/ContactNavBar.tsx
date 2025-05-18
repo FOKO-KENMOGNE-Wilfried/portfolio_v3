@@ -1,6 +1,8 @@
 function ContactNavBar(){
     return (
-        <div>Default Layout</div>
+        <div className="w-80 border-r border-secondary-dark">
+            Nav
+        </div>
     )
 }
 

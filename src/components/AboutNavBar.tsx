@@ -1,4 +1,4 @@
-import { useState, type JSX } from "react";
+import { useState } from "react";
 import { useTheme } from "../utils/Context/ThemeContext";
 import ArrowDownIcon from "./common/icons/ArrowDownIcon";
 import ArrowRightIcon from "./common/icons/ArrowRightIcon";
@@ -7,45 +7,16 @@ import FileIcon from "./common/icons/FileIcon";
 import characterReduce from "../utils/functions/CharacterReduce";
 import { useInformation } from "../utils/Context/InofrmationContext";
 import AboutMeData from "../data/AboutData";
+import type { AboutMainObject } from "../utils/Types/AboutTypes";
 
 function AboutNavBar() {
   const { theme } = useTheme();
   const { updateInformation, information } = useInformation();
 
-  type File = {
-    id: number;
-    name: string;
-    isActive: boolean;
-    icon?: JSX.Element;
-    data: string;
-  };
-
-  type Info = {
-    id: number;
-    name: string;
-    isActive: boolean;
-    files: File[];
-  };
-
-  type Content = {
-    id: number;
-    name: string;
-    info: Info[];
-    isDirectlyDisplayContent?: boolean;
-  };
-
-  type MainObject = {
-    id: number;
-    name: string;
-    icon: JSX.Element;
-    isActive: boolean;
-    contents: Content[];
-  };
-
   function toggleMainObjectIsActive(
-    data: MainObject[],
+    data: AboutMainObject[],
     mainId: number
-  ): MainObject[] {
+  ): AboutMainObject[] {
     setCurrentTabs(mainId.toString());
     return data.map((obj) => ({
       ...obj,
@@ -54,11 +25,11 @@ function AboutNavBar() {
   }
 
   function toggleInfoIsActive(
-    data: MainObject[],
+    data: AboutMainObject[],
     mainId: number,
     contentId: number,
     infoId: number
-  ): MainObject[] {
+  ): AboutMainObject[] {
     return data.map((obj) => {
       if (obj.id !== mainId) return { ...obj };
       return {
@@ -78,12 +49,12 @@ function AboutNavBar() {
   }
 
   function toggleFileIsActive(
-    data: MainObject[],
+    data: AboutMainObject[],
     mainId: number,
     contentId: number,
     infoId: number,
     fileId: number
-  ): MainObject[] {
+  ): AboutMainObject[] {
     return data.map((obj) => {
       if (obj.id !== mainId) return obj;
       return {
@@ -109,7 +80,7 @@ function AboutNavBar() {
   }
 
   const [currentTabs, setCurrentTabs] = useState<string>("2");
-  const [informationList, setInformationList] = useState<MainObject[]>(AboutMeData);
+  const [informationList, setInformationList] = useState<AboutMainObject[]>(AboutMeData);
 
   const currentObject = informationList.find(
     (obj) => obj.id.toString() === currentTabs

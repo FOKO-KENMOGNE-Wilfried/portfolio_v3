@@ -3,8 +3,9 @@ import InfoCardIcon from "../components/common/icons/InfoCardIcon";
 import MailIcon from "../components/common/icons/MailIcon";
 import PhoneIcon from "../components/common/icons/PhoneIcon";
 import TerminalBoxIcon from "../components/common/icons/TerminalBoxIcon";
+import type { AboutMainObject } from "../utils/Types/AboutTypes";
 
-const AboutMeData = [
+const AboutMeData: AboutMainObject[] = [
   {
     id: 1,
     name: "Work",

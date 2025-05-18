@@ -5,7 +5,7 @@ function ContactMe(){
     const { theme } = useTheme();
 
     return (
-        <div className={`${theme == "dark" ? "" : ""}`}>ContactMe</div>
+        <div className={`${theme == "dark" ? "" : ""} p-16`}>ContactMe</div>
     )
 }
 
