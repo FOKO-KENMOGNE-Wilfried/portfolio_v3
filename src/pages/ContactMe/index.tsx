@@ -1,8 +1,10 @@
 import { useForm } from "react-hook-form";
 import { useTheme } from "../../utils/Context/ThemeContext";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 function ContactMe() {
+
   const { theme } = useTheme();
   const {
     register,
@@ -12,12 +14,35 @@ function ContactMe() {
     formState: { errors },
   } = useForm();
   const [isDisplayForms, setIsDisplayForms] = useState(true);
+  const [isSending, setIsSending] = useState(false);
 
-  const onSubmit = (d: any) => {
-    console.log(JSON.stringify(d));
-    reset();
-    setIsDisplayForms(false);
+  const emailId = import.meta.env.VITE_EMAIL_SERVICE_ID;
+  const templateId = import.meta.env.VITE_EMAIL_TEMPLATE_ID;
+  const publicKey = import.meta.env.VITE_EMAIL_PUBLIC_KEY;
+
+  const onSubmit = async (data: any) => {
+    setIsSending(true);
+    try {
+      await emailjs.send(
+        emailId,
+        templateId,
+        {
+          sender_name: data.senderName,
+          sender_email: data.senderEmail,
+          message: data.senderMessage,
+        },
+        publicKey
+      );
+      reset();
+      setIsDisplayForms(false);
+    } catch (error) {
+      alert("Erreur lors de l'envoi du message. Veuillez réessayer.");
+      console.error(error);
+    } finally {
+      setIsSending(false);
+    }
   };
+
   const values = watch();
 
   return (
@@ -44,7 +69,7 @@ function ContactMe() {
                   })}
                   id="senderName"
                 />
-                {errors.senderEmail && (
+                {typeof errors.senderName?.message == "string" && (
                   <span className="text-red-700">
                     {errors.senderName.message}
                   </span>
@@ -68,7 +93,7 @@ function ContactMe() {
                   })}
                   id="senderEmail"
                 />
-                {errors.senderEmail && (
+                {typeof errors.senderEmail?.message == "string" && (
                   <span className="text-red-700">
                     {errors.senderEmail.message}
                   </span>
@@ -88,7 +113,7 @@ function ContactMe() {
                   })}
                   id="senderMessage"
                 ></textarea>
-                {errors.senderEmail && (
+                {typeof errors.senderMessage?.message == "string" && (
                   <span className="text-red-700">
                     {errors.senderMessage.message}
                   </span>
@@ -97,8 +122,9 @@ function ContactMe() {
               <button
                 className="bg-usual-orange w-fit hover:bg-usual-purple cursor-pointer transition-all duration-150 ease-in-out hover:text-white text-black px-8 py-2 rounded-md font-semibold"
                 type="submit"
+                disabled={isSending}
               >
-                Submit
+                {isSending ? "Sending..." : "Submit"}
               </button>
             </div>
           </form>
@@ -109,7 +135,7 @@ function ContactMe() {
             </p>
             <div className="text-xl">
               <p>Your message has been accepted.</p>
-              <p>You will recieve answer soon!</p>
+              <p>You will receive an answer soon!</p>
             </div>
             <div
               onClick={() => setIsDisplayForms(true)}
@@ -132,16 +158,12 @@ function ContactMe() {
           </p>
           <p className="ml-4">
             <span className="text-usual-purple">email</span>: "
-            <span className="text-usual-orange">
-              {values.senderEmail || ""}
-            </span>
+            <span className="text-usual-orange">{values.senderEmail || ""}</span>
             ",
           </p>
           <p className="ml-4">
             <span className="text-usual-purple">message</span>: "
-            <span className="text-usual-orange">
-              {values.senderMessage || ""}
-            </span>
+            <span className="text-usual-orange">{values.senderMessage || ""}</span>
             ",
           </p>
           <p className="ml-4">
@@ -152,9 +174,7 @@ function ContactMe() {
             "
           </p>
           <p>&#125;</p>
-
           <br />
-
           <p>
             <span className="text-[#8b949e]">button</span>.
             <span className="text-[#d2a8ff]">addEventListener</span>(
