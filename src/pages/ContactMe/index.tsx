@@ -33,12 +33,22 @@ function ContactMe() {
               <div className="flex flex-col gap-2">
                 <label htmlFor="senderName">_name</label>
                 <input
-                  className="border border-secondary-dark rounded-md bg-black h-10 w-80 outline-primary-light pl-4"
+                  className={`${
+                    errors.senderName
+                      ? "bg-red-700/20 border-red-700 outline-none"
+                      : "border-secondary-dark"
+                  } border rounded-md bg-black h-10 w-80 outline-primary-light pl-4`}
                   type="text"
-                  {...register("senderName")}
+                  {...register("senderName", {
+                    required: "Name required",
+                  })}
                   id="senderName"
-                  required
                 />
+                {errors.senderEmail && (
+                  <span className="text-red-700">
+                    {errors.senderName.message}
+                  </span>
+                )}
               </div>
               <div className="flex flex-col gap-2">
                 <label htmlFor="senderEmail">_email</label>
@@ -68,11 +78,21 @@ function ContactMe() {
                 <label htmlFor="senderMessage">_message</label>
                 <textarea
                   rows={6}
-                  className="border border-secondary-dark rounded-md bg-black resize-none w-80 outline-primary-light pl-4"
-                  {...register("senderMessage")}
+                  className={`${
+                    errors.senderMessage
+                      ? "bg-red-700/20 border-red-700 outline-none"
+                      : "border-secondary-dark"
+                  } border rounded-md bg-black resize-none w-80 outline-primary-light pl-4`}
+                  {...register("senderMessage", {
+                    required: "Message required",
+                  })}
                   id="senderMessage"
-                  required
                 ></textarea>
+                {errors.senderEmail && (
+                  <span className="text-red-700">
+                    {errors.senderMessage.message}
+                  </span>
+                )}
               </div>
               <button
                 className="bg-usual-orange w-fit hover:bg-usual-purple cursor-pointer transition-all duration-150 ease-in-out hover:text-white text-black px-8 py-2 rounded-md font-semibold"

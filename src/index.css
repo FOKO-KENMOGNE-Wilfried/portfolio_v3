@@ -9,14 +9,28 @@
 
 }
 
-/* *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Fira Code", monospace;
-} */
+@keyframes fall {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(120vh);
+    opacity: 0;
+  }
+}
 
-/* index.css ou App.css */
+.animate-fall {
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.paused {
+  animation-play-state: paused !important;
+}
+
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
