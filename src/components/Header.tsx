@@ -47,7 +47,7 @@ function Header(){
             </div>
             <NavLink to={"/contact-me"} className={`${currentPath == "/contact-me" ? "text-white" : "text-secondary-dark"} relative border-l border-secondary-dark h-full px-8 flex items-center`}>
                 <p>_contact-me</p>
-                <div className={`${currentPath == "/contact-me" ? "bg-usual-orange translate-y-0" : " translate-y-4"} h-1 w-full absolute bottom-0 left-0 transition-all duration-150 ease-in-out`}></div>
+                <div className={`${currentPath == "/contact-me" ? "bg-usual-orange translate-y-0" : " translate-y-4"} h-1 w-full absolute bottom-0 left-0 transition-all duration-75 ease-in-out`}></div>
             </NavLink>
         </div>
     )
