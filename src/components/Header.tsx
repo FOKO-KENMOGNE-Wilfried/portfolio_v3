@@ -31,9 +31,9 @@ function Header(){
     return (
         <div className={`${theme == "dark" ? "" : ""} border-b h-16 border-secondary-dark flex items-center justify-between`}>
             <div className="flex items-center h-full">
-                <div className="text-secondary-dark py-8 border-r h-full w-80 flex items-center px-8">
+                <NavLink to={"/"} className="text-secondary-dark py-8 border-r h-full w-80 flex items-center px-8">
                     <p>FOKO KENMOGNE Wilfried</p>
-                </div>
+                </NavLink>
                 <div className="flex h-full">
                     {
                         navLinks.map((link) => (
