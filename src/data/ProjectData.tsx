@@ -6,11 +6,11 @@ const ProjectData: ProjectTypes[] = [
   {
     id: 0,
     projectName: "Project_1",
-    projectDescription: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium veritatis modi facere odio itaque ullam esse delectus, atque a? Sequi.",
-    projectShortDescription: "_test-project",
-    projectImage: "",
+    projectDescription: "Realisation d'un portfolio personnaliser pour la presentation de ma personne, mes competences ainsi que mes apirations",
+    projectShortDescription: "_my-portfolio",
+    projectImage: "/images/portfolio_image.png",
     projectLink: "",
-    projectGithubLink: "",
+    projectGithubLink: "https://github.com/FOKO-KENMOGNE-Wilfried/portfolio_v3.git",
     projectStack: ["React", "Tailwindcss"],
     projectTechoColor: ["bg-usual-purple", "bg-blue-300"],
     projectTechnoIconList: [<ReactjsIcon className="w-6 h-6" />, <TailwindCssIcon className="w-6 h-6" />]

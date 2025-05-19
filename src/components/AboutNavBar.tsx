@@ -97,20 +97,30 @@ function AboutNavBar() {
       <div className={`flex w-full`}>
         <div className="border-r border-secondary-dark w-1/6 flex flex-col items-center pt-4 gap-8">
           {informationList.map((element) => (
-            <div
-              key={element.id}
-              onClick={() =>
-                setInformationList(
-                  toggleMainObjectIsActive(informationList, element.id)
-                )
-              }
-              className={`${
-                element.isActive ? "text-primary-light" : "text-secondary-dark"
-              } cursor-pointer`}
-            >
-              {element.icon}
-            </div>
-          ))}
+        <div
+          key={element.id}
+          onClick={() =>
+            setInformationList(
+              toggleMainObjectIsActive(informationList, element.id)
+            )
+          }
+          className={`relative group ${
+            element.isActive ? "text-primary-light" : "text-secondary-dark"
+          } cursor-pointer`}
+        >
+          {element.icon}
+          <div
+            className={`
+              absolute bg-black px-4 py-1 rounded-md left-8 top-0 
+              opacity-0 group-hover:opacity-100 
+              pointer-events-none transition-all duration-150 ease-in-out
+            `}
+          >
+            {element.name}
+          </div>
+        </div>
+      ))}
+
         </div>
         <div className="border-r border-secondary-dark w-5/6">
           <div className="flex flex-col items-center">

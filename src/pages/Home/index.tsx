@@ -30,11 +30,11 @@ function Home() {
                 </button>
 
                 <div
-                    className={`absolute bottom-20 right-0 w-72 p-4 rounded-2xl shadow-xl transform transition-all duration-500 ${
+                    className={`absolute bottom-20 -right-6 w-32 p-4 rounded-2xl shadow-xl transform transition-all duration-500 ${
                         isOpen
                             ? "opacity-100 translate-y-0 scale-100"
                             : "opacity-0 translate-y-4 scale-95 pointer-events-none"
-                    } ${isDark ? "bg-secondary-dark text-white" : "bg-white text-black"}`}
+                    } ${isDark ? "bg-black text-white" : "bg-white text-black"}`}
                 >
                     <h3 className="text-center text-lg font-semibold mb-4">Main Stack</h3>
 
@@ -65,7 +65,7 @@ function Home() {
                 </div>
             </div>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-6">
                 <p className="text-secondary-dark text-2xl">Hello. I am</p>
                 <h1 className="text-5xl">Wilfried FOKO KENMOGNE</h1>
                 <p className="text-usual-purple text-3xl">{">"} FullStack Developper</p>

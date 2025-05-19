@@ -1,6 +1,10 @@
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
 import CloseIcon from "../../components/common/icons/CloseIcon";
 import { useInformation } from "../../utils/Context/InofrmationContext";
 import { useTheme } from "../../utils/Context/ThemeContext";
+import CodeSnipets from "../../data/CodeSnipet";
+import FileIcon from "../../components/common/icons/FileIcon";
 
 function AboutMe(){
 
@@ -27,17 +31,43 @@ function AboutMe(){
                     ))
                 }
             </div>
-            <div className="p-8">
-                <p className="whitespace-pre">
+            <div className="p-8 flex justify-between h-[85vh]">
+                <div className="whitespace-pre w-full overflow-y-scroll h-full">
                     {
+                        information.length !== 0 ?
+
                         information.filter((info) => info.isActive)[0]?.content.split('\n').map((line, index) => (
-                            index == 0 ? <div></div> :
-                            <p key={index} className="whitespace-pre-wrap">
-                                {index} {line}
-                            </p>
+                            index == 0 ? <div key={index}></div> :
+                            <div key={index} className="whitespace-pre-wrap">
+                                <div className="w-8 inline-block">{index}</div> {line}
+                            </div>
                         ))
+                        : (
+                        <div className="flex items-center justify-center w-full h-full text-secondary-dark flex-col">
+                            <FileIcon className="w-32 h-32"/>
+                            <p className="text-2xl">_Open file to see content</p>
+                        </div>
+                    )
                     }
-                </p>
+                </div>
+                <div className="w-full h-full p-4 overflow-y-scroll">
+                    <div className="flex flex-col gap-8">
+                        {
+                            CodeSnipets.map((code) => (
+                                <div key={code.id}  className="">
+                                    <div className="flex flex-col gap-2">
+                                        <p className="text-2xl text-usual-purple">__{ code.codeLabel }</p>
+                                        <p className="text-secondary-dark">Language : <span className="text-usual-purple">{ code.language }</span></p>
+                                        <p className="text-secondary-dark">Description : { code.details }</p>
+                                    </div>
+                                    <SyntaxHighlighter language={code.language} style={dracula}>
+                                        { code.code }
+                                    </SyntaxHighlighter>
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
             </div>
         </div>
     )

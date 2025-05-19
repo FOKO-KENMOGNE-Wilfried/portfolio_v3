@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ArrowDownIcon from "./common/icons/ArrowDownIcon";
 import ReactjsIcon from "./common/icons/ReactjsIcon";
-import VuejsIcon from "./common/icons/VuejsIcon";
+// import VuejsIcon from "./common/icons/VuejsIcon";
 import SelectTechno from "./common/SelectTechno";
 import { useProject } from "../utils/Context/ProjectContext";
 import type { ProjectNavLink } from "../utils/Types/ProjectTypes";
@@ -17,12 +17,12 @@ function ProjectNavBar(){
             icon: <ReactjsIcon className="w-6 h-6" />,
             isChecked: false
         },
-        {
-            id: 2,
-            name: "Vue",
-            icon: <VuejsIcon className="w-6 h-6" />,
-            isChecked: false
-        },
+        // {
+        //     id: 2,
+        //     name: "Vue",
+        //     icon: <VuejsIcon className="w-6 h-6" />,
+        //     isChecked: false
+        // },
     ])
 
     function updateSearchList(value: string) {
