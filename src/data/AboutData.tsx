@@ -25,9 +25,7 @@ const AboutMeData: AboutMainObject[] = [
                 name: "FarotySAS",
                 isActive: false,
                 data: `
-                  /**
-                   * Yo
-                  */
+                  Yo
                 `,
               },
               {
@@ -35,9 +33,7 @@ const AboutMeData: AboutMainObject[] = [
                 name: "Sazience Technologie Cameroon",
                 isActive: false,
                 data: `
-                  /**
-                   * Yo
-                  */
+                  Yo
                 `,
               },
             ],
@@ -66,21 +62,19 @@ const AboutMeData: AboutMainObject[] = [
                 name: "About me",
                 isActive: false,
                 data: `
-                  /**
-                   * Salut, moi c'est FOKO KENMOGNE Wilfried, un jeune développeur
-                   * FullStackpassionné, toujours en quête d'apprentissage.
-                   *
-                   * Actuellement en formation au cursus d'ingénierie informatique
-                   * à l'Institut UCAC-ICAM.
-                   *
-                   * Mon objectif : devenir une figure de la tech, une source d'inspiration
-                   * pour les autres, et contribuer à transformer la vision de
-                   * l'informatiqueen Afrique.
-                   *
-                   * Je veux démontrer notre valeur dans les entreprises et œuvrer
-                   * pourl'amélioration des conditions de travail dans
-                   * le secteur IT sur le continent.
-                  */
+                  Salut, moi c'est FOKO KENMOGNE Wilfried, un jeune développeur
+                  FullStackpassionné, toujours en quête d'apprentissage.
+
+                  Actuellement en formation au cursus d'ingénierie informatique
+                  à l'Institut UCAC-ICAM.
+
+                  Mon objectif : devenir une figure de la tech, une source d'inspiration
+                  pour les autres, et contribuer à transformer la vision de
+                  l'informatiqueen Afrique.
+
+                  Je veux démontrer notre valeur dans les entreprises et œuvrer
+                  pourl'amélioration des conditions de travail dans
+                  le secteur IT sur le continent.
                 `,
               },
             ],
@@ -95,11 +89,9 @@ const AboutMeData: AboutMainObject[] = [
                 name: "Music",
                 isActive: false,
                 data: `
-                  /**
-                   * J'aime bien ecouter de la musique d'artiste comme Gims pricipalement mais
-                   * aussi beaucoup de J-pop, en dehors de ca il m'arrive d'ecouter de la k-pop
-                   * et certaines musiques americaines.
-                  */
+                  J'aime bien ecouter de la musique d'artiste comme Gims pricipalement mais
+                  aussi beaucoup de J-pop, en dehors de ca il m'arrive d'ecouter de la k-pop
+                  et certaines musiques americaines.
                 `,
               },
               {
@@ -107,10 +99,8 @@ const AboutMeData: AboutMainObject[] = [
                 name: "Jeux-video",
                 isActive: false,
                 data: `
-                  /**
-                   * J'aime aussi jouer a des jeux video, des fois des Gacha, des fois des jeux
-                   * d'aventures ou de combat, par contre je ne suis pas fan de EA Sport.
-                  */
+                  J'aime aussi jouer a des jeux video, des fois des Gacha, des fois des jeux
+                  d'aventures ou de combat, par contre je ne suis pas fan de EA Sport.
                 `,
               },
               {
@@ -118,11 +108,9 @@ const AboutMeData: AboutMainObject[] = [
                 name: "Jap-Animation",
                 isActive: false,
                 data: `
-                  /**
-                   * Je suis ce que la societe defini comme etant un Otaku donc c'est naturellement
-                   * que je suis fan de tout ce qui est jap-animation (manga, anime) mais les webtoon
-                   * sont aussi l'une de mes principales sources de distraction (manhua, manhwa).
-                  */
+                  Je suis ce que la societe defini comme etant un Otaku donc c'est naturellement
+                  que je suis fan de tout ce qui est jap-animation (manga, anime) mais les webtoon
+                  sont aussi l'une de mes principales sources de distraction (manhua, manhwa).
                 `,
               },
             ],
@@ -137,9 +125,9 @@ const AboutMeData: AboutMainObject[] = [
               //   name: "Lycee de Nylon Ndogpassi",
               //   isActive: false,
               //   data: `
-              //     /**
-              //      * Yo
-              //     */
+              //     
+              //      Yo
+              //     
               //   `,
               // },
               {
@@ -147,18 +135,16 @@ const AboutMeData: AboutMainObject[] = [
                 name: "Institut Ucac-Icam",
                 isActive: false,
                 data: `
-                  /**
-                   * L'Institut UCAC-ICAM est le fruit d'un partenariat entre
-                   * l'Université Catholique d'Afrique Centrale (UCAC) et l'Institut
-                   * Catholique d'Arts et Métiers (ICAM - France). C'est une école
-                   * d'ingénieurs d'excellence qui forme des professionnels complets :
-                   * compétents techniquement, rigoureux, responsables et ouverts sur le monde.
-                   *
-                   * Ce cadre unique me permet de développer à la fois des compétences solides
-                   * en informatique (développement, systèmes, réseau, cybersécurité…) et une
-                   * approche humaine du métier d'ingénieur, tournée vers l'innovation,
-                   * l'éthique et l'impact sociétal.
-                  */
+                  L'Institut UCAC-ICAM est le fruit d'un partenariat entre
+                  l'Université Catholique d'Afrique Centrale (UCAC) et l'Institut
+                  Catholique d'Arts et Métiers (ICAM - France). C'est une école
+                  d'ingénieurs d'excellence qui forme des professionnels complets :
+                  compétents techniquement, rigoureux, responsables et ouverts sur le monde.
+
+                  Ce cadre unique me permet de développer à la fois des compétences solides
+                  en informatique (développement, systèmes, réseau, cybersécurité…) et une
+                  approche humaine du métier d'ingénieur, tournée vers l'innovation,
+                  l'éthique et l'impact sociétal.
                 `,
               }
             ],
@@ -215,9 +201,9 @@ const AboutMeData: AboutMainObject[] = [
   //               name: "",
   //               isActive: false,
   //               data: `
-  //                 /**
-  //                  * Yo
-  //                 */
+  //                 
+  //                  Yo
+  //                 
   //               `,
   //             },
   //           ],
