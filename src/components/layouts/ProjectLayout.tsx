@@ -12,7 +12,7 @@ function ProjectLayout(){
         <div className="flex w-full">
                 <div className={`h-screen w-full flex flex-col justify-between overflow-hidden ${theme == "dark" ? "bg-primary-dark text-primary-light" : "bg-primary-light text-primary-dark"}`}>
                     <Header />
-                    <div className="flex w-full h-full overflow-hidden">
+                    <div className="flex w-full h-full overflow-hidden flex-col md:flex-row">
                         <ProjectNavBar />
                         <Outlet />
                     </div>

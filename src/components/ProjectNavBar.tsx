@@ -54,12 +54,12 @@ function ProjectNavBar(){
     }, [filterList])
 
     return (
-        <div className="w-80 border-r border-secondary-dark">
-            <div className="flex items-center w-full h-12 border-b border-secondary-dark pl-8 gap-4">
+        <div className="w-full md:w-80 border-b md:border-r border-secondary-dark">
+            <div className="flex items-center w-full justify-center md:justify-start h-12 border-b border-secondary-dark pl-8 gap-4">
                 <ArrowDownIcon className="w-6 h-6" />
                 <p>projects</p>
             </div>
-            <div className="py-4 flex flex-col gap-4">
+            <div className="py-8 md:py-4 flex flex-col items-center md:items-start gap-4">
                 {
                     navLinks.map((link) => (
                         <SelectTechno key={link.id} label={link.name} isChecked={link.isChecked} icon={link.icon} handleClick={() => updateSearchList(link.name)} />

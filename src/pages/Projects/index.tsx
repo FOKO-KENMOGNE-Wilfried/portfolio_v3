@@ -25,8 +25,8 @@ function Projects(){
 
 
     return (
-        <div className={`${theme == "dark" ? "" : ""} w-full`}>
-            <div className="w-full border-b border-secondary-dark h-12">
+        <div className={`${theme == "dark" ? "" : ""} w-full overflow-y-scroll mb-4 md:mb-8 h-full md:max-h-fit`}>
+            <div className="sticky top-0 bg-primary-dark z-50 w-full border-b border-secondary-dark h-12">
                 <div className="text-primary-light flex items-center w-fit h-full pr-4 min-w-32 border-r border-secondary-dark">
                     <div className="flex  cursor-default justify-center items-center px-4  h-full w-full">
                         {filterList.map((filter, _index) => (
@@ -38,7 +38,27 @@ function Projects(){
                     </div>
                 </div>
             </div>
-            <div className="p-16 h-full flex gap-y-8 gap-x-4 flex-wrap overflow-y-scroll">
+            <div className="md:p-16 mt-8 justify-center items-center md:justify-start py-8 md:py-0 mb-4 flex gap-y-8 gap-x-4 flex-wrap">
+                {
+                    projectList.map((element) => (
+                        <ProjectCard key={element.id} projectData={element} />
+                    ))
+                }
+                {
+                    projectList.map((element) => (
+                        <ProjectCard key={element.id} projectData={element} />
+                    ))
+                }
+                {
+                    projectList.map((element) => (
+                        <ProjectCard key={element.id} projectData={element} />
+                    ))
+                }
+                {
+                    projectList.map((element) => (
+                        <ProjectCard key={element.id} projectData={element} />
+                    ))
+                }
                 {
                     projectList.map((element) => (
                         <ProjectCard key={element.id} projectData={element} />

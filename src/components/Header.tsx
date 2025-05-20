@@ -14,7 +14,6 @@ function Header() {
         { id: 3, name: "_project", path: "/my-project" },
     ];
 
-    // Bloque le scroll quand le menu est ouvert
     useEffect(() => {
         document.body.style.overflow = isMobileMenuOpen ? "hidden" : "auto";
     }, [isMobileMenuOpen]);
@@ -57,7 +56,7 @@ function Header() {
 
 
             <button
-                className="md:hidden text-secondary-dark z-50"
+                className="md:hidden text-secondary-dark ml-4 z-50"
                 onClick={() => setIsMobileMenuOpen(prev => !prev)}
             >
                 <Icon icon={isMobileMenuOpen ? "mdi:close" : "mdi:menu"} width={28} height={28} />
