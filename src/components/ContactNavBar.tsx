@@ -4,12 +4,12 @@ import PhoneIcon from "./common/icons/PhoneIcon";
 
 function ContactNavBar(){
     return (
-        <div className="w-80 border-r border-secondary-dark">
+        <div className="w-full md:w-80 md:border-r border-secondary-dark">
             <div className="flex items-center w-full h-12 border-b border-secondary-dark pl-8 gap-4">
                 <ArrowDownIcon className="w-6 h-6" />
                 <p>contacts</p>
             </div>
-            <div className="pl-10 pt-8 flex flex-col gap-6">
+            <div className="pl-4 pt-8 flex flex-col gap-6">
                 <a href="mailto:fokowilfried7@gmail.com" className="flex items-center text-secondary-dark cursor-pointer hover:text-primary-light w-full gap-4">
                     <MailIcon className="w-6 h-6" />
                     <p>fokowilfried7@gmail.com</p>

@@ -46,13 +46,13 @@ function ContactMe() {
   const values = watch();
 
   return (
-    <div className={`${theme == "dark" ? "" : ""} w-full overflow-hidden`}>
+    <div className={`${theme == "dark" ? "" : ""} w-full overflow-hidden h-full`}>
       <div className="border-b border-secondary-dark h-12 w-full"></div>
-      <div className="w-full h-full flex justify-between">
+      <div className="w-full h-full flex justify-between flex-col md:flex-row">
         {isDisplayForms ? (
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="border-secondary-dark text-secondary-dark border-r w-full flex flex-col gap-8 items-center pt-32"
+            className="border-secondary-dark text-secondary-dark md:border-r w-full flex flex-col gap-8 items-center pt-32"
           >
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-2">
@@ -129,7 +129,7 @@ function ContactMe() {
             </div>
           </form>
         ) : (
-          <form className="border-secondary-dark text-secondary-dark border-r w-full flex flex-col gap-4 items-center justify-center">
+          <form className="border-secondary-dark text-secondary-dark h-full md:border-r w-full flex flex-col gap-4 items-center justify-center">
             <p className="text-primary-light text-4xl font-semibold">
               Thank you! 👌
             </p>
@@ -146,7 +146,7 @@ function ContactMe() {
           </form>
         )}
 
-        <div className="border-secondary-dark border-l w-full p-8 text-[#c9d1d9] font-mono text-sm">
+        <div className="border-secondary-dark hidden md:block border-l w-full p-8 text-[#c9d1d9] font-mono text-sm">
           <p>
             <span className="text-[#8b949e]">const</span>{" "}
             <span className="text-usual-purple">message</span> = &#123;

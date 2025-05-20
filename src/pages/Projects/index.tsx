@@ -38,27 +38,7 @@ function Projects(){
                     </div>
                 </div>
             </div>
-            <div className="md:p-16 mt-8 justify-center items-center md:justify-start py-8 md:py-0 mb-4 flex gap-y-8 gap-x-4 flex-wrap">
-                {
-                    projectList.map((element) => (
-                        <ProjectCard key={element.id} projectData={element} />
-                    ))
-                }
-                {
-                    projectList.map((element) => (
-                        <ProjectCard key={element.id} projectData={element} />
-                    ))
-                }
-                {
-                    projectList.map((element) => (
-                        <ProjectCard key={element.id} projectData={element} />
-                    ))
-                }
-                {
-                    projectList.map((element) => (
-                        <ProjectCard key={element.id} projectData={element} />
-                    ))
-                }
+            <div className="md:p-16 mt-8 justify-center items-center md:items-start md:justify-start py-8 md:py-0 mb-4 flex gap-y-8 gap-x-4 flex-wrap">
                 {
                     projectList.map((element) => (
                         <ProjectCard key={element.id} projectData={element} />
