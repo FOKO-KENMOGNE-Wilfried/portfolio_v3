@@ -14,7 +14,7 @@ function Home() {
     const isDark = theme === "dark";
 
     return (
-        <div className="flex items-center justify-center flex-row-reverse gap-32 relative w-full h-full">
+        <div className="flex items-center justify-center flex-col-reverse md:flex-row-reverse gap-32 relative w-full h-full">
             <FallingIconsBackground />
 
             <div className="fixed bottom-24 right-10 z-50">
@@ -65,15 +65,15 @@ function Home() {
                 </div>
             </div>
 
-            <div className="flex flex-col gap-6">
-                <p className="text-secondary-dark text-2xl">Hello. I am</p>
-                <h1 className="text-5xl">Wilfried FOKO KENMOGNE</h1>
-                <p className="text-usual-purple text-3xl">{">"} FullStack Developper</p>
+            <div className="flex flex-col gap-2 md:gap-6 text-center md:text-left">
+                <p className="text-secondary-dark text-lg md:text-2xl">Hello. I am</p>
+                <h1 className="text-3xl md:text-5xl">Wilfried FOKO KENMOGNE</h1>
+                <p className="text-usual-purple text-2xl md:text-3xl">{">"} FullStack Developper</p>
             </div>
 
-            <div className="relative">
-                <div className="absolute w-96 h-96 border-2 shadow-2xl shadow-usual-orange border-secondary-dark -right-8 -top-8 rounded-4xl"></div>
-                <div className="w-96 h-96 relative overflow-hidden bg-secondary-dark rounded-4xl">
+            <div className="relative -ml-8 md:ml-8">
+                <div className="absolute w-72 h-72 md:w-96 md:h-96 border-2 shadow-2xl shadow-usual-purple border-secondary-dark -right-8 -top-8 rounded-4xl"></div>
+                <div className="w-72 h-72 md:w-96 md:h-96 relative overflow-hidden bg-secondary-dark rounded-4xl">
                     <img className="w-full h-full" src={me} alt="me" />
                 </div>
             </div>

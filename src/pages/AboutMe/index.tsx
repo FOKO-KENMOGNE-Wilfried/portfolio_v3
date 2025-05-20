@@ -31,46 +31,45 @@ function AboutMe(){
                     ))
                 }
             </div>
-            <div className="p-8 flex justify-between h-[85vh]">
+            <div className="p-8 flex justify-between h-full">
                 <div className="w-full h-full overflow-y-scroll font-mono">
-  {
-    information.length !== 0 ? (
-      <>
-        {/* Ligne d’ouverture */}
-        <div className="grid grid-cols-[3rem_1fr] gap-8 px-2 py-1">
-          <div className="text-right text-gray-400">0</div>
-          <pre className="whitespace-pre-wrap break-words text-gray-400">/**</pre>
-        </div>
+                    {
+                        information.length !== 0 ? (
+                        <>
+                            {/* Ligne d’ouverture */}
+                            <div className="grid grid-cols-[3rem_1fr] gap-8 px-2 py-1">
+                            <div className="text-right text-gray-400">0</div>
+                            <pre className="whitespace-pre-wrap break-words text-gray-400">/**</pre>
+                            </div>
 
-        {
-          information.filter((info) => info.isActive)[0]?.content.split('\n').map((line, index) => (
-            <div key={index + 1} className="grid grid-cols-[3rem_1fr] gap-8 px-2 py-1">
-              <div className="text-right text-gray-400">{index + 1}</div>
-              <div className="flex gap-4">
-                <p className="text-gray-400">*</p>
-                <pre className="whitespace-pre-wrap break-words">{line.trim()}</pre>
-              </div>
-            </div>
-          ))
-        }
+                            {
+                            information.filter((info) => info.isActive)[0]?.content.split('\n').map((line, index) => (
+                                <div key={index + 1} className="grid grid-cols-[3rem_1fr] gap-8 px-2 py-1">
+                                <div className="text-right text-gray-400">{index + 1}</div>
+                                <div className="flex gap-4">
+                                    <p className="text-gray-400">*</p>
+                                    <pre className="whitespace-pre-wrap break-words">{line.trim()}</pre>
+                                </div>
+                                </div>
+                            ))
+                            }
 
-        {/* Ligne de fermeture */}
-        <div className="grid grid-cols-[3rem_1fr] gap-8 px-2 py-1">
-          <div className="text-right text-gray-400">
-            {information.filter((info) => info.isActive)[0]?.content.split('\n').length + 1}
-          </div>
-          <pre className="whitespace-pre-wrap break-words text-gray-400">*/</pre>
-        </div>
-      </>
-    ) : (
-      <div className="flex items-center justify-center w-full h-full text-secondary-dark flex-col">
-        <FileIcon className="w-32 h-32" />
-        <p className="text-2xl">_Open file to see content</p>
-      </div>
-    )
-  }
-</div>
-
+                            {/* Ligne de fermeture */}
+                            <div className="grid grid-cols-[3rem_1fr] gap-8 px-2 py-1">
+                            <div className="text-right text-gray-400">
+                                {information.filter((info) => info.isActive)[0]?.content.split('\n').length + 1}
+                            </div>
+                            <pre className="whitespace-pre-wrap break-words text-gray-400">*/</pre>
+                            </div>
+                        </>
+                        ) : (
+                        <div className="flex items-center justify-center w-full h-full text-secondary-dark flex-col">
+                            <FileIcon className="w-32 h-32" />
+                            <p className="text-2xl">_Open file to see content</p>
+                        </div>
+                        )
+                    }
+                </div>
 
                 <div className="w-full h-full p-4 overflow-y-scroll">
                     <div className="flex flex-col gap-8">
