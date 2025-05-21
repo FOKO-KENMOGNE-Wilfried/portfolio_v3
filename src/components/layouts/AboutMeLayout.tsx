@@ -13,7 +13,7 @@ function AboutMeLayout(){
             <div className="flex w-full">
                 <div className={`h-screen w-full flex flex-col justify-between overflow-hidden ${theme == "dark" ? "bg-primary-dark text-primary-light" : "bg-primary-light text-primary-dark"}`}>
                     <Header />
-                    <div className="flex h-screen  w-full overflow-hidden">
+                    <div className="flex h-screen flex-col md:flex-row  w-full overflow-scroll md:overflow-hidden">
                         <AboutNavBar />
                         <Outlet />
                     </div>

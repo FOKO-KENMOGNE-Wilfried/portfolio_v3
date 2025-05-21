@@ -17,7 +17,7 @@ function AboutMe(){
 
     return (
         <div className={`${theme == "dark" ? "" : ""} w-full`}>
-            <div className="h-12 border-b flex border-secondary-dark w-full">
+            <div className="h-12 border-b md:flex border-secondary-dark w-full hidden">
                 {
                     information.map((tab) => (
                         <div key={tab.id} className={`${tab.isActive ? "text-primary-light" : "text-secondary-dark"} flex items-center h-full pr-4 min-w-32 border-r border-secondary-dark`}>
@@ -31,8 +31,8 @@ function AboutMe(){
                     ))
                 }
             </div>
-            <div className="p-8 flex justify-between h-full">
-                <div className="w-full h-full overflow-y-scroll font-mono">
+            <div className="p-8 flex justify-between h-full flex-col md:flex-row">
+                <div className="w-full h-full md:overflow-y-scroll font-mono">
                     {
                         information.length !== 0 ? (
                         <>
@@ -71,7 +71,7 @@ function AboutMe(){
                     }
                 </div>
 
-                <div className="w-full h-full p-4 overflow-y-scroll">
+                <div className="w-full h-full p-4 md:overflow-y-scroll">
                     <div className="flex flex-col gap-8">
                         {
                             CodeSnipets.map((code) => (

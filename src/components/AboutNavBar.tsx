@@ -92,37 +92,132 @@ function AboutNavBar() {
         theme == "dark"
           ? "bg-primary-dark text-primary-light"
           : "bg-primary-light text-primary-dark"
-      } flex w-80`}
+      } flex w-full md:w-80 sticky top-0`}
     >
       <div className={`flex w-full`}>
-        <div className="border-r border-secondary-dark w-1/6 flex flex-col items-center pt-4 gap-8">
+        <div className="md:border-r border-secondary-dark w-full md:w-1/6 flex flex-col items-center md:pt-4 md:gap-8">
           {informationList.map((element) => (
-        <div
-          key={element.id}
-          onClick={() =>
-            setInformationList(
-              toggleMainObjectIsActive(informationList, element.id)
-            )
-          }
-          className={`relative group ${
-            element.isActive ? "text-primary-light" : "text-secondary-dark"
-          } cursor-pointer`}
-        >
-          {element.icon}
-          <div
-            className={`
-              absolute bg-black px-4 py-1 rounded-md left-8 top-0 
-              opacity-0 group-hover:opacity-100 
-              pointer-events-none transition-all duration-150 ease-in-out
-            `}
-          >
-            {element.name}
-          </div>
-        </div>
-      ))}
+            <div className="w-full md:w-fit">
 
+              <div
+                key={element.id}
+                onClick={() =>
+                  setInformationList(
+                    toggleMainObjectIsActive(informationList, element.id)
+                  )
+                }
+                className={`relative bg-secondary-dark md:bg-transparent w-full md:w-fit h-14 md:h-fit flex items-center justify-center md:block group ${
+                  element.isActive ? "md:text-primary-light" : "md:text-secondary-dark"
+                } cursor-pointer`}
+              >
+                <p className="hidden md:block">{element.icon}</p>
+                <p className="md:hidden">{ element.name }</p>
+                <div
+                  className={`
+                    absolute bg-black px-4 py-1 rounded-md left-8 top-0
+                    opacity-0 group-hover:opacity-100
+                    pointer-events-none transition-all duration-150 ease-in-out
+                  `}
+                >
+                  {element.name}
+                </div>
+              </div>
+              
+              <div className={`md:hidden w-full ${element.isActive ? "h-fit" : "h-0"} transition-all duration-150 ease-in-out overflow-hidden`}>
+                <div className="flex flex-col items-center w-full">
+                  {element?.contents?.filter((info) => info.name !== "Contacts").map((content) => (
+                    <div
+                      key={content.id}
+                      className="w-full border-b border-secondary-dark"
+                    >
+                      
+                        <div className="w-full pl-8 py-4">
+                          {content?.info?.map((info) => (
+                            <div key={info.id}>
+                              <div className="flex gap-2">
+                                <ArrowRightIcon
+                                  className={`${
+                                    info.isActive ? "rotate-90" : "rotate-0"
+                                  } w-6 h-6 transition-all duration-150 ease-in-out`}
+                                />
+                                <div
+                                  className={`${
+                                    info.isActive
+                                      ? "text-primary-light"
+                                      : "text-secondary-dark"
+                                  } flex flex-col`}
+                                >
+                                  <div
+                                    onClick={() =>
+                                      setInformationList(
+                                        toggleInfoIsActive(
+                                          informationList,
+                                          currentObject.id,
+                                          content.id,
+                                          info.id
+                                        )
+                                      )
+                                    }
+                                    className="flex items-center gap-2 cursor-pointer"
+                                  >
+                                    <FolderIcon className={`w-4 h-4`} />
+                                    <p>{info.name}</p>
+                                  </div>
+                                  <div
+                                    className={`${
+                                      info.isActive ? "flex flex-col pl-6" : "hidden"
+                                    }`}
+                                  >
+                                    {info.files?.map((file) => (
+                                      <div
+                                        key={file.id}
+                                        onClick={() =>
+                                          {
+                                            setInformationList(
+                                              toggleFileIsActive(
+                                                informationList,
+                                                currentObject.id,
+                                                content.id,
+                                                info.id,
+                                                file.id
+                                              )
+                                            );
+                                            updateInformation(
+                                              {
+                                                id: file.id,
+                                                name: file.name,
+                                                content: file.data,
+                                                isActive: true,
+                                              }
+                                            )
+                                          }
+                                        }
+                                        className={`${
+                                          information.filter(element => element.id == file.id)[0]?.isActive
+                                            ? "text-primary-light"
+                                            : "text-secondary-dark"
+                                        } flex items-center gap-2 cursor-pointer`}
+                                      >
+                                        <FileIcon className="w-4 h-4" />
+                                        <p>{characterReduce(file.name, 10)}</p>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </div>
+        ))}
         </div>
-        <div className="border-r border-secondary-dark w-5/6">
+        <div className="border-r hidden md:block border-secondary-dark w-5/6">
           <div className="flex flex-col items-center">
             {currentObject?.contents?.map((content) => (
               <div
