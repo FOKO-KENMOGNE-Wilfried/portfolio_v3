@@ -97,7 +97,7 @@ function AboutNavBar() {
       <div className={`flex w-full`}>
         <div className="md:border-r border-secondary-dark w-full md:w-1/6 flex flex-col items-center md:pt-4 md:gap-8">
           {informationList.map((element) => (
-            <div className="w-full md:w-fit">
+            <div className="w-full md:w-fit flex flex-col gap-2">
 
               <div
                 key={element.id}
@@ -106,11 +106,12 @@ function AboutNavBar() {
                     toggleMainObjectIsActive(informationList, element.id)
                   )
                 }
-                className={`relative bg-secondary-dark md:bg-transparent w-full md:w-fit h-14 md:h-fit flex items-center justify-center md:block group ${
+                className={`relative bg-primary-light-dark md:bg-transparent w-full md:w-fit h-14 md:h-fit flex items-center justify-center md:block group ${
                   element.isActive ? "md:text-primary-light" : "md:text-secondary-dark"
                 } cursor-pointer`}
               >
                 <p className="hidden md:block">{element.icon}</p>
+                <ArrowDownIcon className={`w-6 h-6 ${element.isActive ? "rotate-0" : "-rotate-90"} transition-all duration-150 ease-in-out`} />
                 <p className="md:hidden">{ element.name }</p>
                 <div
                   className={`
