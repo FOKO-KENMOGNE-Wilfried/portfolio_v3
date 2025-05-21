@@ -152,7 +152,7 @@ function AboutNavBar() {
                                       setInformationList(
                                         toggleInfoIsActive(
                                           informationList,
-                                          currentObject.id,
+                                          currentObject!.id,
                                           content.id,
                                           info.id
                                         )
@@ -176,7 +176,7 @@ function AboutNavBar() {
                                             setInformationList(
                                               toggleFileIsActive(
                                                 informationList,
-                                                currentObject.id,
+                                                currentObject!.id,
                                                 content.id,
                                                 info.id,
                                                 file.id
