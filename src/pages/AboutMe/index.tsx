@@ -31,8 +31,8 @@ function AboutMe(){
                     ))
                 }
             </div>
-            <div className="p-8 flex justify-between h-full flex-col md:flex-row">
-                <div className="w-full h-full md:overflow-y-scroll font-mono">
+            <div className="p-8 flex justify-between h-full gap-16 md:gap-0 flex-col md:flex-row">
+                <div className="w-full h-full md:overflow-y-scroll font-mono border-b border-secondary-dark md:border-none pb-8 md:pb-0">
                     {
                         information.length !== 0 ? (
                         <>

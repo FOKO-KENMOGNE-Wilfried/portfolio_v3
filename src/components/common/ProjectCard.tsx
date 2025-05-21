@@ -8,7 +8,7 @@ function ProjectCard( { projectData } : { projectData: ProjectTypes } ){
             <div className="h-full">
                 <p className="text-secondary-dark"><span className="text-usual-purple font-semibold">{projectData.projectName}</span> // {projectData.projectShortDescription}</p>
             </div>
-            <div className="w-96 h-80 rounded-lg transition-all duration-200 ease-in-out hover:shadow-lg hover:shadow-usual-orange overflow-hidden border border-secondary-dark">
+            <div className="w-72 md:w-96 md:h-80 rounded-lg transition-all duration-200 ease-in-out hover:shadow-lg hover:shadow-usual-orange overflow-hidden border border-secondary-dark">
                 <div className="w-full h-1/2 bg-black border-b-2 border-secondary-dark relative overflow-hidden">
                         <div className="absolute top-2 right-2 flex gap-2">
                             {
@@ -20,7 +20,7 @@ function ProjectCard( { projectData } : { projectData: ProjectTypes } ){
                     <img className="w-full" src={projectData.projectImage} alt={projectData.projectName} />
                 </div>
                 <div className="h-1/2 p-4 flex flex-col justify-between">
-                    <p>{characterReduce(projectData.projectDescription, 135)}</p>
+                    <p className="text-sm md:text-base">{characterReduce(projectData.projectDescription, 135)}</p>
                     <div className="flex justify-between items-center">
                         {
                             projectData.projectLink ? (

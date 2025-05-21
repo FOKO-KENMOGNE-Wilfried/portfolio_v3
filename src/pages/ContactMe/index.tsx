@@ -52,7 +52,7 @@ function ContactMe() {
         {isDisplayForms ? (
           <form
             onSubmit={handleSubmit(onSubmit)}
-            className="border-secondary-dark text-secondary-dark md:border-r w-full flex flex-col gap-8 items-center pt-32"
+            className="border-secondary-dark text-secondary-dark md:border-r w-full flex flex-col gap-8 items-center pt-8 md:pt-32"
           >
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-2">
