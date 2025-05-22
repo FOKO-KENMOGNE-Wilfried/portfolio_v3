@@ -26,7 +26,7 @@ function Footer(){
     return (
         <div className={`${theme == "dark" ? "" : ""} border-t h-16 border-secondary-dark flex items-center justify-between`}>
             <div className="flex items-center h-full">
-                <div className="text-secondary-dark border-r h-full w-fit flex items-center px-8">
+                <div className="text-secondary-dark border-r h-full w-fit flex items-center px-2 md:px-8">
                     <p>Find me in: </p>
                 </div>
                 <div className="flex h-full">

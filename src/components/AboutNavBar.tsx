@@ -97,7 +97,7 @@ function AboutNavBar() {
       <div className={`flex w-full`}>
         <div className="md:border-r border-secondary-dark w-full md:w-1/6 flex flex-col items-center md:pt-4 md:gap-8">
           {informationList.map((element) => (
-            <div className="w-full md:w-fit flex flex-col gap-2">
+            <div key={element.id} className="w-full md:w-fit flex flex-col gap-2">
 
               <div
                 key={element.id}
@@ -111,7 +111,9 @@ function AboutNavBar() {
                 } cursor-pointer`}
               >
                 <p className="hidden md:block">{element.icon}</p>
-                <ArrowDownIcon className={`w-6 h-6 ${element.isActive ? "rotate-0" : "-rotate-90"} transition-all duration-150 ease-in-out`} />
+                <div className="md:hidden">
+                  <ArrowDownIcon className={`w-6 h-6 ${element.isActive ? "rotate-0" : "-rotate-90"} transition-all duration-150 ease-in-out`} />
+                </div>
                 <p className="md:hidden">{ element.name }</p>
                 <div
                   className={`
@@ -123,7 +125,6 @@ function AboutNavBar() {
                   {element.name}
                 </div>
               </div>
-              
               <div className={`md:hidden w-full ${element.isActive ? "h-fit" : "h-0"} transition-all duration-150 ease-in-out overflow-hidden`}>
                 <div className="flex flex-col items-center w-full">
                   {element?.contents?.filter((info) => info.name !== "Contacts").map((content) => (
@@ -131,25 +132,12 @@ function AboutNavBar() {
                       key={content.id}
                       className="w-full border-b border-secondary-dark"
                     >
-                      
                         <div className="w-full pl-8 py-4">
                           {content?.info?.map((info) => (
                             <div key={info.id}>
                               <div className="flex gap-2">
-                                <ArrowRightIcon
-                                  className={`${
-                                    info.isActive ? "rotate-90" : "rotate-0"
-                                  } w-6 h-6 transition-all duration-150 ease-in-out`}
-                                />
                                 <div
-                                  className={`${
-                                    info.isActive
-                                      ? "text-primary-light"
-                                      : "text-secondary-dark"
-                                  } flex flex-col`}
-                                >
-                                  <div
-                                    onClick={() =>
+                                  onClick={() =>
                                       setInformationList(
                                         toggleInfoIsActive(
                                           informationList,
@@ -159,6 +147,21 @@ function AboutNavBar() {
                                         )
                                       )
                                     }
+                                >
+                                  <ArrowRightIcon
+                                    className={`${
+                                      info.isActive ? "rotate-90" : "rotate-0"
+                                    } w-6 h-6 transition-all duration-150 ease-in-out`}
+                                  />
+                                </div>
+                                <div
+                                  className={`${
+                                    info.isActive
+                                      ? "text-primary-light"
+                                      : "text-secondary-dark"
+                                  } flex flex-col`}
+                                >
+                                  <div
                                     className="flex items-center gap-2 cursor-pointer"
                                   >
                                     <FolderIcon className={`w-4 h-4`} />
@@ -209,7 +212,6 @@ function AboutNavBar() {
                             </div>
                           ))}
                         </div>
-                      
                     </div>
                   ))}
                 </div>
@@ -269,20 +271,8 @@ function AboutNavBar() {
                     {content?.info?.map((info) => (
                       <div key={info.id}>
                         <div className="flex gap-2">
-                          <ArrowRightIcon
-                            className={`${
-                              info.isActive ? "rotate-90" : "rotate-0"
-                            } w-6 h-6 transition-all duration-150 ease-in-out`}
-                          />
                           <div
-                            className={`${
-                              info.isActive
-                                ? "text-primary-light"
-                                : "text-secondary-dark"
-                            } flex flex-col`}
-                          >
-                            <div
-                              onClick={() =>
+                            onClick={() =>
                                 setInformationList(
                                   toggleInfoIsActive(
                                     informationList,
@@ -292,6 +282,21 @@ function AboutNavBar() {
                                   )
                                 )
                               }
+                          >
+                            <ArrowRightIcon
+                              className={`${
+                                info.isActive ? "rotate-90" : "rotate-0"
+                              } w-6 h-6 transition-all duration-150 ease-in-out`}
+                            />
+                          </div>
+                          <div
+                            className={`${
+                              info.isActive
+                                ? "text-primary-light"
+                                : "text-secondary-dark"
+                            } flex flex-col`}
+                          >
+                            <div
                               className="flex items-center gap-2 cursor-pointer"
                             >
                               <FolderIcon className={`w-4 h-4`} />

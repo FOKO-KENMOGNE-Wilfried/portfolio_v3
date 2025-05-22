@@ -62,7 +62,7 @@ function ContactMe() {
                     errors.senderName
                       ? "bg-red-700/20 border-red-700 outline-none"
                       : "border-secondary-dark"
-                  } border rounded-md bg-black h-10 w-80 outline-primary-light pl-4`}
+                  } border text-white rounded-md bg-black h-10 w-80 outline-primary-light pl-4`}
                   type="text"
                   {...register("senderName", {
                     required: "Name required",
@@ -82,7 +82,7 @@ function ContactMe() {
                     errors.senderEmail
                       ? "bg-red-700/20 border-red-700 outline-none"
                       : "border-secondary-dark"
-                  } transition-all duration-150 ease-in-out border  rounded-md bg-black h-10 w-80 outline-primary-light pl-4`}
+                  } transition-all text-white duration-150 ease-in-out border  rounded-md bg-black h-10 w-80 outline-primary-light pl-4`}
                   type="email"
                   {...register("senderEmail", {
                     required: "Email required",
@@ -107,7 +107,7 @@ function ContactMe() {
                     errors.senderMessage
                       ? "bg-red-700/20 border-red-700 outline-none"
                       : "border-secondary-dark"
-                  } border rounded-md bg-black resize-none w-80 outline-primary-light pl-4`}
+                  } border text-white rounded-md bg-black resize-none w-80 outline-primary-light pl-4`}
                   {...register("senderMessage", {
                     required: "Message required",
                   })}
@@ -120,7 +120,7 @@ function ContactMe() {
                 )}
               </div>
               <button
-                className="bg-usual-orange w-fit hover:bg-usual-purple cursor-pointer transition-all duration-150 ease-in-out hover:text-white text-black px-8 py-2 rounded-md font-semibold"
+                className={`${values.senderName && values.senderEmail && values.senderMessage ? "bg-usual-orange text-black" : "bg-primary-light-dark text-secondary-dark"} w-fit hover:bg-usual-purple cursor-pointer transition-all duration-150 ease-in-out hover:text-white px-8 py-2 rounded-md font-semibold`}
                 type="submit"
                 disabled={isSending}
               >

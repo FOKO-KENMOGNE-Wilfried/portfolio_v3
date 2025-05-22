@@ -31,20 +31,20 @@ function AboutMe(){
                     ))
                 }
             </div>
-            <div className="p-8 flex justify-between h-full gap-16 md:gap-0 flex-col md:flex-row">
+            <div className="py-8 md:p-8 flex justify-between h-full gap-16 md:gap-0 flex-col md:flex-row">
                 <div className="w-full h-full md:overflow-y-scroll font-mono border-b border-secondary-dark md:border-none pb-8 md:pb-0">
                     {
                         information.length !== 0 ? (
                         <>
                             {/* Ligne d’ouverture */}
-                            <div className="grid grid-cols-[3rem_1fr] gap-8 px-2 py-1">
-                            <div className="text-right text-gray-400">0</div>
-                            <pre className="whitespace-pre-wrap break-words text-gray-400">/**</pre>
+                            <div className="grid grid-cols-[1rem_1fr] md:grid-cols-[3rem_1fr] gap-2 md:gap-8 px-2 py-1">
+                                <div className="text-right text-gray-400">0</div>
+                                <pre className="whitespace-pre-wrap break-words text-gray-400">/**</pre>
                             </div>
 
                             {
                             information.filter((info) => info.isActive)[0]?.content.split('\n').map((line, index) => (
-                                <div key={index + 1} className="grid grid-cols-[3rem_1fr] gap-8 px-2 py-1">
+                                <div key={index + 1} className="grid grid-cols-[1rem_1fr] md:grid-cols-[3rem_1fr] gap-2 md:gap-8 px-2 py-1">
                                 <div className="text-right text-gray-400">{index + 1}</div>
                                 <div className="flex gap-4">
                                     <p className="text-gray-400">*</p>
@@ -55,7 +55,7 @@ function AboutMe(){
                             }
 
                             {/* Ligne de fermeture */}
-                            <div className="grid grid-cols-[3rem_1fr] gap-8 px-2 py-1">
+                            <div className="grid grid-cols-[1rem_1fr] md:grid-cols-[3rem_1fr] gap-2 md:gap-8 px-2 py-1">
                             <div className="text-right text-gray-400">
                                 {information.filter((info) => info.isActive)[0]?.content.split('\n').length + 1}
                             </div>
@@ -63,7 +63,7 @@ function AboutMe(){
                             </div>
                         </>
                         ) : (
-                        <div className="flex items-center justify-center w-full h-full text-secondary-dark flex-col">
+                        <div className="flex items-center justify-center h-96 w-full md:h-full text-secondary-dark flex-col">
                             <FileIcon className="w-32 h-32" />
                             <p className="text-2xl">_Open file to see content</p>
                         </div>

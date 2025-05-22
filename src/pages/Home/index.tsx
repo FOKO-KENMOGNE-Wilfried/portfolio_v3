@@ -20,7 +20,7 @@ function Home() {
             <div className="fixed bottom-24 right-10 z-50">
                 <button
                     onClick={() => setIsOpen(prev => !prev)}
-                    className={`w-16 cursor-pointer border-2 border-secondary-dark h-16 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 ${
+                    className={`w-12 h-12 md:w-16 md:h-16 cursor-pointer border-2 border-secondary-dark rounded-full flex items-center justify-center shadow-lg transition-all duration-300 ${
                         isDark
                             ? "bg-primary-dark hover:bg-usual-purple"
                             : "bg-white hover:bg-usual-purple"

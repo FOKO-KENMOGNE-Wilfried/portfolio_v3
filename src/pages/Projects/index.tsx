@@ -26,7 +26,7 @@ function Projects(){
 
     return (
         <div className={`${theme == "dark" ? "" : ""} w-full overflow-y-scroll mb-4 md:mb-8 h-full md:max-h-fit`}>
-            <div className="sticky top-0 bg-primary-dark z-50 w-full border-b border-secondary-dark h-12">
+            <div className="hidden md:block sticky top-0 bg-primary-dark z-50 w-full border-b border-secondary-dark h-12">
                 <div className="text-primary-light flex items-center w-fit h-full pr-4 min-w-32 border-r border-secondary-dark">
                     <div className="flex  cursor-default justify-center items-center px-4  h-full w-full">
                         {filterList.map((filter, _index) => (
