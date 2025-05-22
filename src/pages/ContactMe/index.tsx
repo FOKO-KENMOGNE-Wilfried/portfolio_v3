@@ -62,7 +62,7 @@ function ContactMe() {
                     errors.senderName
                       ? "bg-red-700/20 border-red-700 outline-none"
                       : "border-secondary-dark"
-                  } border text-white rounded-md bg-black h-10 w-80 outline-primary-light pl-4`}
+                  } border text-white rounded-md bg-primary-light-dark h-10 w-80 outline-secondary-dark pl-4`}
                   type="text"
                   {...register("senderName", {
                     required: "Name required",
@@ -82,7 +82,7 @@ function ContactMe() {
                     errors.senderEmail
                       ? "bg-red-700/20 border-red-700 outline-none"
                       : "border-secondary-dark"
-                  } transition-all text-white duration-150 ease-in-out border  rounded-md bg-black h-10 w-80 outline-primary-light pl-4`}
+                  } transition-all text-white duration-150 ease-in-out border  rounded-md bg-primary-light-dark h-10 w-80 outline-secondary-dark pl-4`}
                   type="email"
                   {...register("senderEmail", {
                     required: "Email required",
@@ -107,7 +107,7 @@ function ContactMe() {
                     errors.senderMessage
                       ? "bg-red-700/20 border-red-700 outline-none"
                       : "border-secondary-dark"
-                  } border text-white rounded-md bg-black resize-none w-80 outline-primary-light pl-4`}
+                  } border text-white rounded-md bg-primary-light-dark resize-none w-80 outline-secondary-dark pl-4`}
                   {...register("senderMessage", {
                     required: "Message required",
                   })}
